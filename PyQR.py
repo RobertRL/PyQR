@@ -1,4 +1,8 @@
+import sys
 import qrcode
+
+# Read the data from the command line argument
+data = sys.argv[1]
 
 # Create a QR code instance
 qr = qrcode.QRCode(
@@ -8,8 +12,7 @@ qr = qrcode.QRCode(
     border=4,
 )
 
-# Add data to the QR code
-data = "This is the data that will be encoded in the QR code"
+# Add the data to the QR code
 qr.add_data(data)
 qr.make(fit=True)
 
